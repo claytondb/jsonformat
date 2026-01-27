@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Format - Beautify, Validate & Transform JSON</title>
+    <meta name="description" content="Format, validate, minify and transform JSON data. Free online tool for developers.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{ } JSON Format</h1>
+            <p class="tagline">Beautify, validate, and transform JSON instantly</p>
+        </header>
+
+        <main>
+            <!-- Action Buttons -->
+            <div class="actions">
+                <button id="format-btn" class="action-btn primary">✨ Format</button>
+                <button id="minify-btn" class="action-btn">📦 Minify</button>
+                <button id="validate-btn" class="action-btn">✅ Validate</button>
+                <button id="clear-btn" class="action-btn">🗑️ Clear</button>
+            </div>
+
+            <!-- Editor Area -->
+            <div class="editor-container">
+                <div class="editor-panel">
+                    <div class="panel-header">
+                        <span>Input</span>
+                        <div class="panel-actions">
+                            <button id="paste-btn" class="small-btn">📋 Paste</button>
+                            <button id="sample-btn" class="small-btn">📄 Sample</button>
+                        </div>
+                    </div>
+                    <textarea id="input" placeholder='Paste your JSON here...
+
+{
+  "example": "data"
+}'></textarea>
+                </div>
+
+                <div class="editor-panel">
+                    <div class="panel-header">
+                        <span>Output</span>
+                        <div class="panel-actions">
+                            <button id="copy-btn" class="small-btn">📋 Copy</button>
+                            <button id="download-btn" class="small-btn">💾 Download</button>
+                        </div>
+                    </div>
+                    <textarea id="output" readonly placeholder="Formatted output will appear here..."></textarea>
+                </div>
+            </div>
+
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span id="status">Ready</span>
+                <span id="stats"></span>
+            </div>
+
+            <!-- Options -->
+            <div class="options-section">
+                <h2>Options</h2>
+                <div class="options-grid">
+                    <div class="option">
+                        <label for="indent">Indent:</label>
+                        <select id="indent">
+                            <option value="2" selected>2 spaces</option>
+                            <option value="4">4 spaces</option>
+                            <option value="tab">Tab</option>
+                        </select>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="sort-keys">
+                            Sort keys alphabetically
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="quote-keys" checked>
+                            Quote all keys
+                        </label>
+                    </div>
+                    <div class="option">
+                        <label>
+                            <input type="checkbox" id="escape-unicode">
+                            Escape unicode
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transform Section -->
+            <div class="transform-section">
+                <h2>Transform</h2>
+                <div class="transform-buttons">
+                    <button class="transform-btn" data-action="to-array">To Array</button>
+                    <button class="transform-btn" data-action="flatten">Flatten</button>
+                    <button class="transform-btn" data-action="extract-keys">Extract Keys</button>
+                    <button class="transform-btn" data-action="extract-values">Extract Values</button>
+                    <button class="transform-btn" data-action="to-csv">To CSV</button>
+                    <button class="transform-btn" data-action="to-yaml">To YAML</button>
+                </div>
+            </div>
+
+            <!-- Path Finder -->
+            <div class="path-section">
+                <h2>🔍 Path Finder</h2>
+                <p class="hint">Click on a value in the tree view to get its JSON path</p>
+                <div class="tree-view" id="tree-view">
+                    <p class="empty-state">Format JSON to see the tree view</p>
+                </div>
+                <div class="path-output" id="path-output" style="display:none;">
+                    <label>Selected Path:</label>
+                    <input type="text" id="selected-path" readonly>
+                    <button id="copy-path">Copy</button>
+                </div>
+            </div>
+
+            <!-- Compare Section -->
+            <div class="compare-section">
+                <h2>🔄 Compare JSON</h2>
+                <div class="compare-inputs">
+                    <textarea id="compare-a" placeholder="First JSON..."></textarea>
+                    <textarea id="compare-b" placeholder="Second JSON..."></textarea>
+                </div>
+                <button id="compare-btn" class="action-btn">Compare</button>
+                <div id="compare-result" class="compare-result"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>100% client-side • No data sent to servers</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
