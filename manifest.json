@@ -1,0 +1,19 @@
+{
+  "name": "JSON Format",
+  "short_name": "JSON Format",
+  "description": "Beautify, validate, minify and transform JSON data. Free online tool for developers.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e1e2e",
+  "theme_color": "#89b4fa",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["developer tools", "utilities"]
+}
